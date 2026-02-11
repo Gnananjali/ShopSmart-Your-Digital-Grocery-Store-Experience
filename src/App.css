@@ -1,38 +1,244 @@
-.App {
-  text-align: center;
+* {
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+  min-height: 100vh;
+  color: #f1f1f1;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.product-card h3 {
+  color: #ffffff;
+}
+
+.product-card p {
+  color: #cfcfcf;
+}
+
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+
+.logo {
+  font-size: 24px;
+  font-weight: 600;
+  color: white;
+  letter-spacing: 1px;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 20px;
+  padding: 40px;
+}
+
+.product-card {
+  animation: fadeIn 0.6s ease forwards;
+  opacity: 0;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+
+.product-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 12px 40px rgba(0, 150, 255, 0.3);
+}
+
+
+
+.product-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.product-card button {
+  margin-top: 10px;
+  padding: 8px 12px;
+  border: none;
+  background: #007bff;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.navbar {
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  padding: 18px 50px;
+  background: rgba(10, 15, 25, 0.9);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+
+
+.brand {
+  margin: 0;
+}
+
+.cart-icon {
+  position: relative;
+  font-size: 24px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.cart-icon:hover {
+  transform: scale(1.1);
+}
+
+.cart-count {
+  position: absolute;
+  top: -8px;
+  right: -10px;
+  background: #ff3b3b;
+  color: white;
+  font-size: 12px;
+  font-weight: bold;
+  padding: 4px 8px;
+  border-radius: 50%;
+}
+
+
+.add-btn {
+  background: linear-gradient(to right, #00c6ff, #0072ff);
+}
+
+.add-btn:hover {
+  transform: translateY(-2px);
+  opacity: 0.9;
+}
+
+
+.cart {
+  position: fixed;
+  top: 0;
+  right: -400px;
+  width: 380px;
+  height: 100vh;
+  background: #161b2e; /* dark background */
+  padding: 25px;
+  box-shadow: -10px 0 40px rgba(0, 0, 0, 0.6);
+  transition: 0.3s ease;
+  overflow-y: auto;
+  color: #f1f1f1;
+}
+
+.cart.open {
+  right: 0;
+}
+
+
+.cart-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.qty-controls {
+  display: flex;
+  gap: 8px;
+}
+
+.qty-controls button {
+  padding: 4px 8px;
+  border: none;
+  background: #007bff;
+  color: white;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.close-btn {
+  margin-top: 20px;
+  padding: 10px;
+  width: 100%;
+  background: red;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+
+.search-bar {
+  width: 300px;
+  padding: 10px;
+  margin: 20px auto;
+  display: block;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+.categories {
+  text-align: center;
+  margin: 20px 0;
+}
+
+.categories button {
+  margin: 0 8px;
+  padding: 6px 14px;
+  border: none;
+  background: #eee;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.categories button:hover {
+  background: #ddd;
+}
+
+.categories .active {
+  background: #007bff;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+
+.empty-cart {
+  text-align: center;
+  margin-top: 40px;
+  opacity: 0.7;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+
+.app-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+
+.rating {
+  color: #ffc107;
+  letter-spacing: 2px;
+  font-size: 18px;
+}
+
+
+.sort-dropdown {
+  display: block;
+  margin: 10px auto 20px;
+  padding: 8px;
+  border-radius: 6px;
+}
+
+.logo span {
+  margin-left: 8px;
 }
